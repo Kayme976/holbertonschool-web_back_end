@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-"""Type-annoted function sum_lsit input_list"""
+"""Type annoted function sum lsit input list"""
 from typing import List
 
 
 def sum_list(input_list: List[float]) -> float:
-    """return the sum"""
+    """return the sum of the list"""
     return sum(input_list)
