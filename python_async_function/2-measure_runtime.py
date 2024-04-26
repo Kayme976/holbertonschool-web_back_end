@@ -13,6 +13,7 @@ async def measure_time(n, max_delay):
     total_time = end_time - start_time
     return total_time / n
 
+
 async def main():
     n = 5
     max_delay = 10

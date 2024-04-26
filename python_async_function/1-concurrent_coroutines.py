@@ -9,6 +9,7 @@ async def wait_random(max_delay=10):
     await asyncio.sleep(delay)
     return delay
 
+
 async def wait_n(n, max_delay):
     delays = []
     tasks = [wait_random(max_delay) for _ in range(n)]
@@ -16,6 +17,7 @@ async def wait_n(n, max_delay):
         delay = await task
         delays.append(delay)
     return delays
+
 
 async def main():
     n = 5
