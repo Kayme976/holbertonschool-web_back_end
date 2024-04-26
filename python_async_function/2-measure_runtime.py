@@ -3,21 +3,13 @@
 import asyncio
 import random
 import time
-from wait_random import wait_n
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-async def measure_time(n, max_delay):
-    start_time = time.time()
-    await wait_n(n, max_delay)
+def measure_time(n: int, max_delay: int) -> float:
+    """measure total time"""
+    start = time.time()
+    asyncio.run(wait_n(n, max_delay))
     end_time = time.time()
-    total_time = end_time - start_time
-    return total_time / n
-
-
-async def main():
-    n = 5
-    max_delay = 10
-    avg_time_per_delay = await measure_time(n, max_delay)
-    print("Average time per delay:", avg_time_per_delay)
-
-asyncio.run(main())
+    end_total = end_time - start
+    return float(end_total / n)
