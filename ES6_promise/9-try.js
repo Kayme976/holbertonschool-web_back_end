@@ -1,10 +1,12 @@
-export default function groceriesList() {
-    const groceries = new Map();
-    groceries.set('Apples', 10);
-    groceries.set('Tomatoes', 10);
-    groceries.set('Pasta', 1);
-    groceries.set('Rice', 1);
-    groceries.set('Banana', 5);
-    return groceries;
+export default function guardfail(mathFunction) {
+  const queue = [];
+  try {
+    queue.push(mathFunction());
+  } catch (err) {
+    queue.push(`${err}`);
+  } finally {
+    queue.push('Guardrail was processed');
   }
-  
+  return queue;
+}
+ 
