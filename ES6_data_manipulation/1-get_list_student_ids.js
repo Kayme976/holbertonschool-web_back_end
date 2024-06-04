@@ -1,7 +1,12 @@
-export default function getListStudentIds(arrayOfObjects) {
-    let arrayOfIds = [];
-    if (arrayOfObjects instanceof Array) {
-      arrayOfIds = arrayOfObjects.map((object) => object.id);
-    }
-    return arrayOfIds;
+// List students
+
+const getListStudentIds = (ids) => {
+  if (!Array.isArray(ids)) {
+    return [];
   }
+  const meids = ids.map((item) => item.id);
+
+  return meids;
+};
+
+export default getListStudentIds;
